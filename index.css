@@ -1,0 +1,491 @@
+/* Resetování výchozích stylů prohlížeče */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Základní styl pro tělo stránky */
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #ecf4ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Kontejner pro obsah stránky */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nadpisy {
+    cursor: pointer;
+    color: #83a1c7;
+    text-decoration: underline;
+    transition: color 0.3s;
+    text-shadow: 0 0 10px #a7cbff;
+}
+
+.nadpisy:hover {
+    color: #add1ff;
+}
+
+/* Hlavička */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    border-bottom: 4px solid #83a1c7;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+/* Logo */
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+/* Navigační menu */
+.menu {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 40px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+    text-decoration: underline;
+    color: #a7cbff;
+    font-weight: bolder;
+    transition: color 0.3s;
+}
+
+/* Nadpisy */
+h1, h2, h3 {
+    color: #333;
+    text-align: center; /* Vycentrování nadpisů */
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.beverages {
+    text-align: center;
+    display: none;
+    margin-top: 10px;
+}
+
+/* Odstavce */
+p {
+    margin-bottom: 15px;
+}
+
+/* Obrázky */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Oddělovač */
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+/* Sekce O nás */
+#about {
+    text-align: center;
+    padding: 20px 0;
+}
+
+#about .container {
+    max-width: 800px; /* Určete maximální šířku */
+    margin: 0 auto;
+}
+
+#about h2 {
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-image {
+    flex: 1;
+    text-align: right;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 40px;
+    margin-left: 45px;
+    box-shadow: 0px 0px 50px #a7cbff;
+    border: 4px solid #83a1c7;
+}
+
+.about-image-leva {
+    flex: 1;
+    text-align: left;
+}
+
+.about-image-leva img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 40px;
+    margin-right: -175px;
+    margin-top: 100px;
+    box-shadow: 0px 0px 50px #a7cbff;
+    border: 4px solid #83a1c7;
+}
+
+.about-image-prava {
+    flex: 1;
+    text-align: right;
+}
+
+.about-image-prava img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 40px;
+    margin-top: 100px;
+    margin-left: -175px;
+    box-shadow: 0px 0px 50px #a7cbff;
+    border: 4px solid #83a1c7;
+}
+
+/* Sekce Rezervace */
+#reservation {
+    text-align: center;
+    padding: 20px 0;
+}
+
+#reservation .container {
+    max-width: 600px; /* Určete maximální šířku */
+    margin: 0 auto;
+}
+
+#reservation h2 {
+    margin-bottom: 20px;
+}
+
+#reservation form {
+    text-align: left;
+}
+
+#reservation .form-group {
+    margin-bottom: 20px;
+}
+
+#reservation label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#reservation input[type="text"],
+#reservation input[type="tel"],
+#reservation input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#reservation input[type="date"],
+#reservation input[type="time"],
+#reservation input[type="number"],
+#reservation select,
+#reservation textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#reservation button[type="submit"] {
+    box-shadow: 0 0 10px #a7cbff;
+    background-color: #83a1c7;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#reservation button[type="submit"]:hover {
+    background-color: #add1ff;
+}
+
+
+
+
+
+
+/* Sekce Recenze */
+#reviews {
+    text-align: center;
+    padding: 50px 0;
+}
+
+#reviews .container {
+    max-width: 1500px; /* Určete maximální šířku */
+    margin: 0 auto;
+}
+
+#reviews h2 {
+    margin-bottom: 10px;
+}
+
+.review {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.review-box {
+    flex: 1;
+    background-color: #aabacf80;
+    border: 2px solid #83a0c786;
+    padding: 40px;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 10px 10px 15px #add1ff;
+    
+}
+
+.review-box h3 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px 1px #83a1c7;
+}
+
+.review-box p {
+    text-align: left;
+    font-size: 16px;
+}
+
+
+
+
+
+
+/* special_offer.css */
+.special-offer {
+    position: sticky;
+    bottom: 20px;
+    display: none;
+    background-color: #aabacf;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+.special-offer h2 {
+    color: #3a4657;
+    margin-bottom: 10px;
+}
+
+.special-offer p {
+    margin: 0;
+    color: white;
+}
+
+#specialItem {
+    font-weight: bold;
+    color: #add1ff;
+    text-shadow: 0 0 10px #000000;
+    text-decoration: underline;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #3a608f;
+}
+
+.close-btn:hover {
+    color: #add1ff;
+}
+
+.contact-text {
+    flex: 1;
+    text-align: left;
+    margin-left: 100px;
+}
+
+.contact-image {
+    flex: 1;
+    text-align: right;
+    max-width: 100%;
+    height: auto;
+    margin-right: 100px;
+}
+
+iframe {
+    box-shadow: 0px 0px 50px #a7cbff;
+}
+
+
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    height: 20vh;
+    margin-top: 100px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .review {
+        flex-direction: column;
+    }
+
+    .review-box {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .review-box p {
+        font-size: 15px;
+    }
+
+    .about-image img {
+        align-items: center;
+        margin-left: 0px;
+    }
+
+    .about-image-prava img {
+        align-items: center;
+        margin-left: 0px;
+    }
+
+    .about-image-leva img {
+        align-items: center;
+        margin-left: 0px;
+    }
+
+    .contact-text {
+        padding-right: 0;
+        margin-bottom: 20px; 
+    }
+
+    .contact-image {
+        align-items: center;
+        margin-left: 0px;
+
+    }
+   /* iframe {
+        max-width: 100%;
+        height: 300px;
+        display: block;
+        margin: 0 auto;
+    } */
+    
+}
+
+
+.vitej {
+    position: relative;
+    background-image: url(../restauraceweb/utopialogo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+.vitej::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #83a0c741;
+    backdrop-filter: blur(10px);
+}

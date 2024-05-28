@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurace UTOPIA 🌍</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="DaxlinePro-Bold.otf">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="utopialogo.png" alt="Restaurace UTOPIA Logo"></a>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#denni">DENNÍ MENU</a></li>
+                    <li><a href="#food">JÍDLO</a></li>
+                    <li><a href="#drinks">NÁPOJE</a></li>
+                    <li><a href="#about">O NÁS</a></li>
+                    <li><a href="#reservation">REZERVACE</a></li>
+                    <li><a href="#reviews">RECENZE</a></li>
+                    <li><a href="#contact">KONTAKT</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="vitej1">
+        <div class="vitej">
+            <h2>UTOPIA</h2>
+            <h3>Vítejte v perfektní destinaci!</h3>
+            <div>
+                <div class="contact">
+                    
+                </div>  
+            </div>
+        </div>
+    </section>¨
+
+
+    <div id="lunchSpecial" class="special-offer">
+        <h2>Obědový speciál</h2>
+        <p>Dnešní speciální nabídka: <span id="specialItem">CRISPY SHIITAKE SALAD - 569 Kč</span></p>
+        <p id="timer"></p>
+        <button id="closeBtn" class="close-btn">&times;</button>
+    </div>
+
+    <section id="denni">
+    <div class="container">
+        <h1>DENNÍ MENU<p id="current-date"></p></h1>
+        <h2>Polévky</h2>
+        <h2>Hlavní chody</h2>
+        <h2>Dezerty</h2>
+    </div>
+    </section>
+
+    <hr>
+
+    <section id="food">
+        <div class="container">
+            <h1 class="nadpisy" onclick="toggleContent('rozbalitjidlo')">JÍDELNÍ LÍSTEK ↓</h1>
+            <div id="rozbalitjidlo" class="beverages">
+                <h2 class="nadpisy" onclick="toggleContent('rozbalitpolevky')">POLÉVKY</h2>
+                <div id="rozbalitpolevky" class="beverages">
+                    <p>Fiktivní polévka 1</p>
+                    <p>Fiktivní polévka 2</p>
+                    <p>Fiktivní polévka 3</p>
+                </div>
+                <h2 class="nadpisy" onclick="toggleContent('rozbalithlavni')">HLAVNÍ CHODY</h2>
+                <div id="rozbalithlavni" class="beverages">
+                    <p>Fiktivní chod 1</p>
+                    <p>Fiktivní chod 2</p>
+                    <p>Fiktivní chod 3</p>
+                </div>
+                <h2 class="nadpisy" onclick="toggleContent('rozbalitdezerty')">DEZERTY</h2>
+                <div id="rozbalitdezerty" class="beverages">
+                    <p>Fiktivní dezert 1</p>
+                    <p>Fiktivní dezert 2</p>
+                    <p>Fiktivní dezert 3</p>
+                </div>
+            </div>
+    </section>
+    <br>
+    <section id="drinks">
+            <h1 class="nadpisy" onclick="toggleContent('rozbalitpiti')">NÁPOJE ↓</h1>
+                <div id="rozbalitpiti" class="beverages">
+                    <h3>Fiktivní nápoj 1</h3>
+                    <h3>Fiktivní nápoj 2</h3>
+                    <h3>Fiktivní nápoj 3</h3>
+                </div>
+    </section>
+
+    <hr>
+
+    <section id="about">
+        <div class="container">
+            <h2>O nás</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Restaurace UTOPIA</h3>
+                    <p>
+                        Vítejte v restauraci UTOPIA, kde se gastronomické sny stávají skutečností a každý kousek naší kuchyně je malým kouskem ráje. Jsme vášniví kuchaři a hostitelé, kteří věří, že dobré jídlo může změnit svět kolem nás.<br>
+                        
+                        Náš podnik se nachází v srdci města Praha, ale jakmile vkročíte do našich dveří, ocitnete se v jiném světě - světě plném lahodných vůní, chutí a příjemného prostředí, kde se setkávají lidé s láskou ke gastronomii a společnému prožívání dobrého jídla.<br>
+                        
+                        Menu restaurace UTOPIA je skládáno s láskou a pečlivostí. Spoléháme se na čerstvé, sezónní suroviny, které zachovávají svou přirozenou chuť a kvalitu. Každý pokrm je důkladně promyšlený a připravený tak, aby každý sousto bylo nezapomenutelným zážitkem pro vaše chuťové buňky.<br>
+                        
+                        Přijďte s námi objevit gastronomickou utopii a nechte se unést do světa chutí, který jsme pro vás připravili.</p>
+                </div>
+                <div class="about-image">
+                    <img src="insideutopia.png" alt="Obrázek restaurace">
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="about-image-prava">
+                    <img src="insideutopia.png" alt="Obrázek restaurace">
+                </div>
+                <div class="about-image-leva">
+                    <img src="insideutopia.png" alt="Obrázek restaurace">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="reservation">
+        <div class="container">
+            <h2>Rezervace</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="date">Datum:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Čas:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Počet hostů:</label>
+                    <input type="number" id="guests" name="guests" min="1" max="8" required>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Délka návštěvy:</label>
+                    <select id="duration" name="duration" required>
+                        <option value="30">30 minut</option>
+                        <option value="60">60 minut</option>
+                        <option value="90">90 minut</option>
+                        <option value="120">120 minut</option>
+                        <option value="150">150 minut</option>
+                        <option value="180">180 minut</option>
+                        <option value="vice">více</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Celé jméno:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefon:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="note">Poznámka:</label>
+                    <textarea id="note" name="note" rows="4"></textarea>
+                </div>
+                <button type="submit">Odeslat rezervaci</button>
+            </form>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="reviews">
+        <div class="container">
+            <h2>Recenze</h2>
+            <div class="review">
+                <div class="review-box">
+                    <h3>Jana Novotná</h3>
+                    <p>"Návštěva Utopia Restaurace byla skvělým zážitkem! Jídlo bylo vynikající a obsluha velmi přátelská. Nejvíce mě nadchl jejich dezertní menu, které bylo opravdu bohaté a chutné. Určitě se sem vrátím!"</p>
+                </div>
+                <div class="review-box">
+                    <h3>Petr Horák</h3>
+                    <p>"Utopia Restaurace je opravdu oázou klidu a skvělého jídla. Prostředí je krásné a moderní, ideální pro romantickou večeři nebo oslavu s přáteli. Jídlo bylo dokonale připravené a chuťově vyvážené. Doporučuji!"</p>
+                </div>
+                <div class="review-box">
+                    <h3>Lucie Dvořáková</h3>
+                    <p>"Byla jsem příjemně překvapena kvalitou jídla a služeb v Utopia Restauraci. Personál byl ochotný a profesionální. Nabídka jídel byla pestrá a vše, co jsme ochutnali, bylo naprosto skvělé. Tato restaurace se stala mou oblíbenou!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <hr>
+
+<section id="contact">
+    <div class="container">
+        <h2>Kontakt</h2>
+        <div class="about-content">
+            <div class="contact-text">
+                <p>
+                    Adresa: Weilova 1270/4, Praha 10 – Hostivař, 102 00<br/>
+                    Telefon: +420 123 456 789<br/>
+                    Email:
+                    <a href="mailto:dlomax21@student.skolahostivar.cz">info@restaurace.cz</a><br/>
+                    Otevírací doba: Po-Pá 11:00-22:00,<br/> So-Ne 12:00-23:00
+                </p>
+            </div> 
+            <div class="contact-image">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.8002780101374!2d14.538400677135328!3d50.05257257151907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b92630201ebd9%3A0x2a89b8e19f42b8!2sWeilova%201270%2F4%2C%20102%2000%20Praha%2015-Hostiva%C5%99!5e0!3m2!1scs!2scz!4v1716901092456!5m2!1scs!2scz" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>  
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section id="faq">
+    <div class="container">
+        <h2>FAQ - často kladené otázky</h2>
+        <div>
+            <div class="contact">
+                
+            </div>  
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 UTOPIA</p>
+</footer>
+
+</body>
+</html>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const lunchSpecialDiv = document.getElementById('lunchSpecial');
+        const closeBtn = document.getElementById('closeBtn');
+        
+        // Function to check if the current time is within the specified range
+        function isLunchTime() {
+            const now = new Date();
+            const hours = now.getHours();
+            const timezoneOffset = now.getTimezoneOffset() / 60; // Convert minutes to hours
+    
+            // Check if the current time is between 11 am and 2 pm GMT+1
+            return hours >= 11 + timezoneOffset && hours <= 15 + timezoneOffset;
+        }
+    
+        
+        function updateLunchSpecial() {
+            if (isLunchTime()) {
+                lunchSpecialDiv.style.display = 'block';
+                setTimer();
+            } else {
+                lunchSpecialDiv.style.display = 'none';
+            }
+        }
+    
+        // Daily timer
+        function setTimer() {
+            const endDate = new Date();
+            endDate.setHours(14); // (2 pm GMT+1)
+            endDate.setMinutes(0);
+            endDate.setSeconds(0);
+    
+            const now = new Date();
+            const timeDifference = endDate - now;
+    
+            // Display the time difference as a countdown timer
+            displayTimer(timeDifference);
+    
+            
+            const timerInterval = setInterval(function () {
+                const timeDifference = endDate - new Date();
+                displayTimer(timeDifference);
+    
+                
+                if (timeDifference <= 0) {
+                    clearInterval(timerInterval);
+                    lunchSpecialDiv.style.display = 'none';
+                    // Show the lunch special again after 3 minutes
+                    setTimeout(function () {
+                        updateLunchSpecial();
+                    }, 180000);
+                }
+            }, 1000);
+        }
+    
+        // Display timer
+        function displayTimer(timeDifference) {
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById('timer').innerText = `Zbývá: ${hours}h ${minutes}m`;
+        }
+    
+        closeBtn.addEventListener('click', function () {
+            lunchSpecialDiv.style.display = 'none';
+            setTimeout(function () {
+                updateLunchSpecial();
+            }, 180000);
+        });
+    
+        updateLunchSpecial();
+        setInterval(updateLunchSpecial, 60000);
+    });
+
+    function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+
+
+
+
+        
+
+
+        function getCurrentDate() {
+            var today = new Date();
+            var day = today.getDate();
+            var month = today.getMonth() + 1; // Leden je 0, takže přidáme 1
+            var year = today.getFullYear();
+
+            // Přidáme nulu před jednociferné dny a měsíce
+            if (day < 10) {
+                day = '0' + day;
+            }
+            if (month < 10) {
+                month = '0' + month;
+            }
+
+            return day + '.' + month + '.' + year;
+        }
+
+        document.getElementById('current-date').innerText = getCurrentDate();
+    
+    </script>
