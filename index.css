@@ -88,6 +88,10 @@ header {
     transition: color 0.3s;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Nadpisy */
 h1, h2, h3 {
     color: #333;
@@ -187,7 +191,7 @@ hr {
     max-width: 100%;
     height: auto;
     border-radius: 40px;
-    margin-right: -175px;
+    margin-right: -150px;
     margin-top: 100px;
     box-shadow: 0px 0px 50px #a7cbff;
     border: 4px solid #83a1c7;
@@ -202,8 +206,8 @@ hr {
     max-width: 100%;
     height: auto;
     border-radius: 40px;
+    margin-left: -150px;
     margin-top: 100px;
-    margin-left: -175px;
     box-shadow: 0px 0px 50px #a7cbff;
     border: 4px solid #83a1c7;
 }
@@ -378,23 +382,134 @@ hr {
     color: #add1ff;
 }
 
-.contact-text {
-    flex: 1;
-    text-align: left;
-    margin-left: 100px;
+.container11 {
+    margin-top: 100px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 20px 60px 30px 40px;
 }
 
-.contact-image {
-    flex: 1;
-    text-align: right;
-    max-width: 100%;
-    height: auto;
-    margin-right: 100px;
+.container11 .content11 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container11 .content11 .left-side11 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    position: relative;
+}
+
+.content11 .left-side11::before {
+    content: '';
+    position: absolute;
+    height: 70%;
+    width: 2px;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.content11 .left-side11 .details {
+    margin: 14px;
+    text-align: center;
+}
+
+.content11 .left-side11 .details i {
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    
+}
+
+.content11 .left-side11 .details .topic {
+    font-size: 18px;
+    font-weight: 500;
+    font-weight: bold;
+    color: #83a1c7;
+    text-shadow: 2px 2px 0 #add1ff;
+}
+
+.container11 .content11 .right-side11 {
+    width: 50%;
+    margin-left: 75px;
+}
+
+.map {
+position: relative;
+width: 500px;
+height: 500px;
+padding-top: 0; /* Poměr stran 1:1 (tj. čtverec) */
+margin: 0 auto;
+}
+
+.map iframe {
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+border: 0;
 }
 
 iframe {
     box-shadow: 0px 0px 50px #a7cbff;
 }
+@media (max-width:600px){
+    .map{
+        width: 100%;
+        padding-top: 100%;
+    }
+    .content11 .left-side11 .details i {
+        font-size: 25px;
+    }
+    .content11 .left-side11 .details .topic {
+        font-size: 16px;
+        font-weight: 450;
+    }
+}
+
+
+@media (max-width: 820px) {
+    .container11 {
+        margin: -40px 0;
+        height: 100%;
+        padding: 20px 0 30px;
+    }
+
+    .container11 .content11 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container11 .content11 .left-side11 {
+        width: 100%;
+        flex-direction: row;
+        margin-top: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .container11 .content11 .left-side11::before {
+        display: none;
+    }
+
+    .container11 .content11 .right-side11 {
+        width: 100%;
+        margin-left: 0;
+    }
+    .map{
+        width: 80%;
+        padding-top: 80%;
+    }
+}
+
 
 
 footer {
@@ -411,11 +526,25 @@ footer {
     justify-content: center;
     gap: 20px;
 }
+@media (max-width: 1225px) {
+    
+    .about-image-leva img {
+        margin-right: -50px;
+    }
+    
+    .about-image-prava img {
+        margin-left: -50px;
+    }
+}
+
 
 
 @media (max-width: 768px) {
     .about-content {
         flex-direction: column;
+        justify-content: center;
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
     .about-text {
@@ -437,43 +566,37 @@ footer {
     }
 
     .about-image img {
-        align-items: center;
         margin-left: 0px;
+        margin-right: 0px;
     }
 
     .about-image-prava img {
-        align-items: center;
         margin-left: 0px;
+        margin-right: 0px;
+        
     }
 
     .about-image-leva img {
-        align-items: center;
         margin-left: 0px;
+        margin-right: 0px;
     }
 
-    .contact-text {
-        padding-right: 0;
-        margin-bottom: 20px; 
+    .content11 .left-side11 .details .topic {
+        font-size: 20px;
+        font-weight: bold;
+        color: #83a1c7;
+        text-shadow: 1px 1px 0 #add1ff;
     }
 
-    .contact-image {
-        align-items: center;
-        margin-left: 0px;
-
-    }
-   /* iframe {
-        max-width: 100%;
-        height: 300px;
-        display: block;
-        margin: 0 auto;
-    } */
-    
 }
 
 
+
 .vitej {
+    width: auto;
+    height: 700px;
     position: relative;
-    background-image: url(../restauraceweb/utopialogo.png);
+    background-image: url(../restauraceweb/insideutopia.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -488,4 +611,76 @@ footer {
     bottom: 0;
     background-color: #83a0c741;
     backdrop-filter: blur(10px);
+}
+
+.vitej div {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    text-align: center;
+    padding: 280px 0;
+}
+
+.vitej h1 {
+    font-size: 3em;
+    margin: 10px 0;
+    color: #83a1c7;
+    text-shadow: 0 0 3px white;
+}
+.vitej div span {
+    font-size: 1.2em;
+    color: #add1ff;
+    text-shadow: 0 0 10px #000000;
+}
+
+
+
+
+
+/*faq section*/
+.accordion{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 3px;
+}
+.accordion .accordion-content{
+    margin: 10px 0;
+    border-radius: 3px;
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.accordion-content.open{
+    padding-bottom: 15px;
+}
+.accordion-content label{
+    display: flex;
+    min-height: 50px;
+    padding: 0 15px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.5s linear;
+}
+.accordion-content.open label{
+    min-height: 35px;
+}
+.accordion-content label .title{
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
+.accordion-content label i{
+    font-size: 15px;
+    color: #FCBA0A;
+}
+.accordion-content .description{
+    height: 0;
+    font-size: 12px;
+    color: #808080;
+    font-weight: 400;
+    padding: 0 15px;
+    transition: all 0.5s linear;
 }
