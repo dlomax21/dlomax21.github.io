@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 /* Resetování výchozích stylů prohlížeče */
 * {
     margin: 0;
@@ -7,10 +11,39 @@
 
 /* Základní styl pro tělo stránky */
 body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #ecf4ff;
-    color: #333;
+    font-family: "Raleway", sans-serif;
+    background-color: #f4f4f4;
+    color: #333333;
     line-height: 1.6;
+}
+
+/*** Works on common browsers ***/
+::selection {
+    background-color: #886e42;
+    color: #fff;
+}
+
+/*** Mozilla based browsers ***/
+::-moz-selection {
+    background-color: #886e42;
+    color: #fff;
+}
+
+/***For Other Browsers ***/
+::-o-selection {
+    background-color: #886e42;
+    color: #fff;
+}
+
+::-ms-selection {
+    background-color: #886e42;
+    color: #fff;
+}
+
+/*** For Webkit ***/
+::-webkit-selection {
+    background-color: #886e42;
+    color: #fff;
 }
 
 /* Kontejner pro obsah stránky */
@@ -20,13 +53,6 @@ body {
     margin: 0 auto;
 }
 
-.nadpisy {
-    cursor: pointer;
-    color: #83a1c7;
-    text-decoration: underline;
-    transition: color 0.3s;
-    text-shadow: 0 0 10px #a7cbff;
-}
 
 .nadpisy:hover {
     color: #add1ff;
@@ -37,60 +63,196 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #333;
-    color: #fff;
-    padding: 40px 0;
-    border-bottom: 4px solid #83a1c7;
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    padding: 20px 0;
     text-align: center;
-    margin-bottom: 100px;
+    box-shadow: 0 0px 10px #00000085;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section {
+    scroll-margin-top: 150px; /* Set this to the height of your header */
 }
 
 /* Logo */
-.logo {
-    display: inline-block;
-    vertical-align: middle;
-}
-
 .logo img {
     width: 100px;
     height: auto;
+    margin-left: 75px;
 }
 
 /* Navigační menu */
 .menu {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 40px;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 999;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    text-align: center;
+    margin-right: 75px;
 }
 
 .menu ul li {
-    display: inline-block;
-    margin-right: 30px;
+    margin: 20px 0;
 }
 
 .menu ul li a {
-    color: #fff;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-size: 17px;
-    font-weight: bold;
+    font-weight: 550;
     transition: color 0.3s;
+    position: relative;
+}
+
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #886e42;
+    transition: width .3s ease;
+    -webkit-transition: width .3s ease;
+}
+
+.menu ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: #886e42;
 }
 
 .menu ul li a:hover {
-    text-decoration: underline;
-    color: #a7cbff;
-    font-weight: bolder;
-    transition: color 0.3s;
+    color: #886e42;
 }
 
-html {
-    scroll-behavior: smooth;
+/* Menu Icon */
+.hamb {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-right: 25px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1001; /* Ensure the hamburger icon is on top */
 }
+
+.hamb-line {
+    background: #886e42;
+    display: block;
+    height: 2px;
+    width: 24px;
+    margin: 4px 0;
+    transition: all .2s ease-out;
+}
+
+.side-menu {
+    display: none;
+} /* Hide checkbox */
+
+/* Toggle menu icon */
+.side-menu:checked ~ .menu {
+    display: flex;
+}
+
+.side-menu:checked ~ .hamb .hamb-line:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+}
+
+.side-menu:checked ~ .hamb .hamb-line:nth-child(2) {
+    opacity: 0;
+}
+
+.side-menu:checked ~ .hamb .hamb-line:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -8px;
+}
+
+/* Responsiveness */
+@media (min-width: 1000px) {
+    .menu {
+        display: flex;
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    
+    .menu ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menu ul li {
+        margin-right: 25px;
+        margin-left: 0;
+    }
+
+    .menu ul li:last-child {
+        margin-right: 0;
+    }
+
+    .hamb {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .menu ul li a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 24px;
+        transition: color 0.3s;
+    }
+
+    .menu ul li a:hover {
+        color: #886e42;
+        font-weight: bold;
+    }
+
+    .menu ul {
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 575px) {
+    .logo img {
+        width: 100px;
+        height: auto;
+        margin-left: 20px;
+    }
+
+    .hamb {
+        margin-right: -5px;
+    }
+}
+
+
+
 
 /* Nadpisy */
 h1, h2, h3 {
@@ -114,11 +276,6 @@ h3 {
     margin-bottom: 10px;
 }
 
-.beverages {
-    text-align: center;
-    display: none;
-    margin-top: 10px;
-}
 
 /* Odstavce */
 p {
@@ -136,11 +293,136 @@ img {
 /* Oddělovač */
 hr {
     border: none;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #886e42;
     margin: 20px 0;
     margin-top: 100px;
     margin-bottom: 100px;
 }
+
+.podtrhavac {
+    border: none;
+    border-top: 1px solid #886e42;
+    margin: 20px 0;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+.denninadpis {
+    font-weight: 825;
+}
+
+.dennisub {
+    color: #886e42;
+    font-weight: 825;
+}
+
+#denni h3 {
+    font-weight: 500;
+}
+
+/* Style the tab */
+.tab {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: #e4e4e4;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 22px 52px;
+    transition: 0.3s;
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #886e42;
+    color: white;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #886e42;
+    color: white;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    /*border: 1px solid #ccc;*/
+    border-top: none;
+    margin-top: 25px;
+  }
+
+  .tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  }
+
+  .tabcontent h3 {
+    font-weight: 500;
+  }
+
+  .tablinks {
+    color: #886e42;
+    font-size: 16px;
+    font-weight: 770;
+    font-family: "Raleway", sans-serif;
+  }
+
+
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  @media (max-width: 750px) {
+    .tab {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .tab button {
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #886e42;
+        background-color: white;
+    }
+
+}
+
+@media (max-width: 1290px) {
+    .podtrhavac {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+}
+
+@media (max-width: 790px) {
+    .podtrhavac {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+}
+@media (max-width: 520px) {
+    .podtrhavac {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+}
+
+
 
 /* Sekce O nás */
 #about {
@@ -155,6 +437,12 @@ hr {
 
 #about h2 {
     margin-bottom: 20px;
+    color: #886e42;
+    font-weight: 825;
+}
+
+#about h3 {
+    font-weight: 825;
 }
 
 .about-content {
@@ -178,8 +466,8 @@ hr {
     height: auto;
     border-radius: 40px;
     margin-left: 45px;
-    box-shadow: 0px 0px 50px #a7cbff;
-    border: 4px solid #83a1c7;
+    box-shadow: 0px 0px 50px #886e42ab;
+    border: 4px solid #886e42;
 }
 
 .about-image-leva {
@@ -193,8 +481,8 @@ hr {
     border-radius: 40px;
     margin-right: -150px;
     margin-top: 100px;
-    box-shadow: 0px 0px 50px #a7cbff;
-    border: 4px solid #83a1c7;
+    box-shadow: 0px 0px 50px #886e42ab;
+    border: 4px solid #886e42;
 }
 
 .about-image-prava {
@@ -208,8 +496,8 @@ hr {
     border-radius: 40px;
     margin-left: -150px;
     margin-top: 100px;
-    box-shadow: 0px 0px 50px #a7cbff;
-    border: 4px solid #83a1c7;
+    box-shadow: 0px 0px 50px #886e42ab;
+    border: 4px solid #886e42;
 }
 
 /* Sekce Rezervace */
@@ -225,6 +513,8 @@ hr {
 
 #reservation h2 {
     margin-bottom: 20px;
+    color: #886e42;
+    font-weight: 825;
 }
 
 #reservation form {
@@ -265,20 +555,22 @@ hr {
 }
 
 #reservation button[type="submit"] {
-    box-shadow: 0 0 10px #a7cbff;
-    background-color: #83a1c7;
+    /*box-shadow: 0 0 10px #fdce7d;*/
+    background-color: #886e42;
     color: #ffffff;
-    font-weight: bold;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    border: solid 1px #886e42;
 }
 
 #reservation button[type="submit"]:hover {
-    background-color: #add1ff;
+    background-color: #ffffff;
+    color: #886e42;
 }
 
 
@@ -298,7 +590,9 @@ hr {
 }
 
 #reviews h2 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    color: #886e42;
+    font-weight: 825;
 }
 
 .review {
@@ -309,13 +603,13 @@ hr {
 
 .review-box {
     flex: 1;
-    background-color: #aabacf80;
-    border: 2px solid #83a0c786;
+    background-color: #ffffff;
+    border: 2px solid #886e42;
     padding: 40px;
     border-radius: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    box-shadow: 10px 10px 15px #add1ff;
+    /*box-shadow: 10px 10px 15px #886e42;*/
     
 }
 
@@ -323,8 +617,8 @@ hr {
     text-align: left;
     margin-bottom: 10px;
     font-size: 20px;
-    color: white;
-    text-shadow: 2px 2px 1px #83a1c7;
+    color: #333333;
+    font-weight: 850;
 }
 
 .review-box p {
@@ -342,29 +636,31 @@ hr {
     position: sticky;
     bottom: 20px;
     display: none;
-    background-color: #aabacf;
+    background-color: #ffffffb4;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 70px;
     text-align: center;
+    border: 1px solid #886e42;
 }
 
 .special-offer h2 {
-    color: #3a4657;
+    color: #886e42;
     margin-bottom: 10px;
+    font-weight: 825;
 }
 
 .special-offer p {
     margin: 0;
-    color: white;
 }
 
 #specialItem {
     font-weight: bold;
-    color: #add1ff;
-    text-shadow: 0 0 10px #000000;
+    color: #886e42;
+    text-shadow: 0 0 10px #ffffff;
     text-decoration: underline;
+    font-weight: 800;
 }
 
 .close-btn {
@@ -373,13 +669,19 @@ hr {
     right: 10px;
     background-color: transparent;
     border: none;
-    font-size: 1.5em;
+    font-size: 2em;
     cursor: pointer;
-    color: #3a608f;
+    color: #000000;
 }
 
 .close-btn:hover {
-    color: #add1ff;
+    color: #886e42;
+}
+
+#contactnadpis h2 {
+    margin-bottom: 20px;
+    color: #886e42;
+    font-weight: 825;
 }
 
 .container11 {
@@ -394,6 +696,11 @@ hr {
     align-items: center;
     justify-content: space-between;
 }
+
+.container11 .content11 h3 {
+    font-weight: 825;
+}
+
 
 .container11 .content11 .left-side11 {
     width: 50%;
@@ -432,8 +739,7 @@ hr {
     font-size: 18px;
     font-weight: 500;
     font-weight: bold;
-    color: #83a1c7;
-    text-shadow: 2px 2px 0 #add1ff;
+    color: #886e42;
 }
 
 .container11 .content11 .right-side11 {
@@ -459,7 +765,7 @@ border: 0;
 }
 
 iframe {
-    box-shadow: 0px 0px 50px #a7cbff;
+    box-shadow: 0px 0px 50px #886e42ab;
 }
 @media (max-width:600px){
     .map{
@@ -476,7 +782,7 @@ iframe {
 }
 
 
-@media (max-width: 820px) {
+@media (max-width: 1000px) {
     .container11 {
         margin: -40px 0;
         height: 100%;
@@ -507,18 +813,20 @@ iframe {
     .map{
         width: 80%;
         padding-top: 80%;
+        margin-top: 50px;
     }
 }
 
 
 
 footer {
-    background-color: #333;
-    color: #ffffff;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
     text-align: center;
     padding: 20px;
     height: 20vh;
     margin-top: 100px;
+    border-top: solid 2px #886e42;
 }
 
 .footer {
@@ -584,8 +892,6 @@ footer {
     .content11 .left-side11 .details .topic {
         font-size: 20px;
         font-weight: bold;
-        color: #83a1c7;
-        text-shadow: 1px 1px 0 #add1ff;
     }
 
 }
@@ -594,9 +900,9 @@ footer {
 
 .vitej {
     width: auto;
-    height: 700px;
+    height: 90vh;
     position: relative;
-    background-image: url(../restauraceweb/insideutopia.png);
+    background-image: url(insideutopia.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -609,7 +915,7 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #83a0c741;
+    background-color: #886e4233;
     backdrop-filter: blur(10px);
 }
 
@@ -622,15 +928,17 @@ footer {
 }
 
 .vitej h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     margin: 10px 0;
-    color: #83a1c7;
+    color: #ffffff;
     text-shadow: 0 0 3px white;
+    font-weight: 825;
 }
 .vitej div span {
     font-size: 1.2em;
-    color: #add1ff;
+    color: #ffffff;
     text-shadow: 0 0 10px #000000;
+    font-weight: 300;
 }
 
 
@@ -638,6 +946,12 @@ footer {
 
 
 /*faq section*/
+#accord1on h2 {
+    margin-bottom: 20px;
+    color: #886e42;
+    font-weight: 825;
+}
+
 .accordion{
     max-width: 1000px;
     width: 100%;
@@ -651,6 +965,8 @@ footer {
     background: white;
     overflow: hidden;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    padding: 15px;
 }
 .accordion-content.open{
     padding-bottom: 15px;
@@ -668,18 +984,18 @@ footer {
     min-height: 35px;
 }
 .accordion-content label .title{
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 500;
     color: black;
+    font-weight: bold;
 }
 .accordion-content label i{
     font-size: 15px;
-    color: #FCBA0A;
+    color: #886e42;
 }
 .accordion-content .description{
     height: 0;
-    font-size: 12px;
-    color: #808080;
+    font-size: 15px;
     font-weight: 400;
     padding: 0 15px;
     transition: all 0.5s linear;

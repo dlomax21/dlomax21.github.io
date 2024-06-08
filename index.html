@@ -5,42 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurace UTOPIA 🌍</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="DaxlinePro-Bold.otf">
+    <script src="https://kit.fontawesome.com/200ffcf162.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html"><img src="utopialogo.png" alt="Restaurace UTOPIA Logo"></a>
-            </div>
-            <nav class="menu">
-                <ul>
-                    <li><a href="#denni">DENNÍ MENU</a></li>
-                    <li><a href="#food">JÍDLO</a></li>
-                    <li><a href="#drinks">NÁPOJE</a></li>
-                    <li><a href="#about">O NÁS</a></li>
-                    <li><a href="#reservation">REZERVACE</a></li>
-                    <li><a href="#reviews">RECENZE</a></li>
-                    <li><a href="#contact">KONTAKT</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </nav>
+        <div class="logo">
+            <a href="#"><img src="utopialogo.png" alt="Restaurace UTOPIA Logo"></a>
         </div>
+    
+        <!-- Hamburger icon -->
+        <input class="side-menu" type="checkbox" id="side-menu"/>
+        <label class="hamb" for="side-menu">
+            <span class="hamb-line"></span>
+            <span class="hamb-line"></span>
+            <span class="hamb-line"></span>
+        </label>
+    
+        <nav class="menu">
+            <ul>
+                <li><a href="#denni">DENNÍ MENU</a></li>
+                <li><a href="#menumenicko">MENU</a></li>
+                <li><a href="#about">O NÁS</a></li>
+                <li><a href="#reservation">REZERVACE</a></li>
+                <li><a href="#reviews">RECENZE</a></li>
+                <li><a href="#contact">KONTAKT</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
     </header>
+    
 
 
         <div class="vitej">
             <div>
             <h1>UTOPIA</h1>
-            <span>Vítejte v perfektní destinaci!</span>
+            <span>VÍTEJTE V PERFEKTNÍ DESTINACI!</span>
             </div>
         </div>
 
 <hr>
 
     <div id="lunchSpecial" class="special-offer">
-        <h2>Obědový speciál</h2>
+        <h2>OBĚDOVÁ NABÍDKA</h2>
         <p>Dnešní speciální nabídka: <span id="specialItem">CRISPY SHIITAKE SALAD - 569 Kč</span></p>
         <p id="timer"></p>
         <button id="closeBtn" class="close-btn">&times;</button>
@@ -48,73 +58,95 @@
 
     <section id="denni">
     <div class="container">
-        <h1>DENNÍ MENU<p id="current-date"></p></h1>
-        <h2>Polévky</h2>
+        <h1 class="denninadpis">DENNÍ MENU<p id="current-date"></p></h1>
+        <hr class="podtrhavac">
+        <h2 class="dennisub">POLÉVKY</h2>
         <h3>V přípravách..</h3>
+        <hr class="podtrhavac">
         <br>
-        <h2>Hlavní chody</h2>
+        <h2 class="dennisub">HLAVNÍ CHODY</h2>
         <h3>V přípravách..</h3>
+        <hr class="podtrhavac">
         <br>
-        <h2>Dezerty</h2>
+        <h2 class="dennisub">DEZERTY</h2>
         <h3>V přípravách..</h3>
+        <hr class="podtrhavac">
     </div>
     </section>
 
     <hr>
+<section id="menumenicko">
+    <!-- Tab links -->
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Polevky')">POLÉVKY</button>
+    <button class="tablinks" onclick="openCity(event, 'HlavniJidla')">HLAVNÍ JÍDLA</button>
+    <button class="tablinks" onclick="openCity(event, 'Dezerty')">DEZERTY</button>
+    <button class="tablinks" onclick="openCity(event, 'Napoje')">NÁPOJE</button>
+  </div>
+  
+  <!-- Tab content -->
+  <div id="HlavniJidla" class="tabcontent">
+    <hr class="podtrhavac">
+    <h3>KUŘECÍ PRSA NA ROZMARÝNU S PEČENÝMI BRAMBORAMI</h3>
+    <center><p>429 Kč</p></center>
+    <hr class="podtrhavac">
+    <h3>GRILOVANÝ LOSOS S CITRONOVÝM MÁSLEM A ZELENINOVÝM SALÁTEM</h3>
+    <center><p>449 Kč</p></center>
+    <hr class="podtrhavac">
+    <h3>VEGETARIÁNSKÉ LASAGNE</h3>
+    <center><p>449 Kč</p></center>
+    <hr class="podtrhavac">
+  </div>
+  
+  
+  <div id="Polevky" class="tabcontent">
+    <hr class="podtrhavac">
+    <h3>RAJČATOVÁ POLÉVKA S BAZALKOU</h3>
+    <center><p>299 Kč</p></center>
+    <hr class="podtrhavac">
+    <h3>DÝŇOVÁ POLÉVKA S KOKOSOVÝM MLÉKEM</h3>
+    <center><p>299 Kč</p></center>
+    <hr class="podtrhavac">
+    <h3>HOVĚZÍ VÝVAR S NUDLEMI</h3>
+    <center><p>299 Kč</p></center>
+    <hr class="podtrhavac">
+  </div>
 
-    <section id="food">
-        <div class="container">
-            <h1 class="nadpisy" onclick="toggleContent('rozbalitjidlo')">JÍDELNÍ LÍSTEK ↓</h1>
-            <div id="rozbalitjidlo" class="beverages">
-                <h2 class="nadpisy" onclick="toggleContent('rozbalitpolevky')">POLÉVKY</h2>
-                <div id="rozbalitpolevky" class="beverages">
-                    <h3>Rajčatová polévka s bazalkou</h3>
-                    <br>
-                    <h3>Dýňová polévka s kokosovým mlékem</h3>
-                    <br>
-                    <h3>Hovězí vývar s nudlemi</h3>
-                    <br>
-                </div>
-                <h2 class="nadpisy" onclick="toggleContent('rozbalithlavni')">HLAVNÍ CHODY</h2>
-                <div id="rozbalithlavni" class="beverages">
-                    <h3>Kuřecí prsa na rozmarýnu s pečenými bramborami</h3>
-                    <br>
-                    <h3>Grilovaný losos s citronovým máslem a zeleninovým salátem</h3>
-                    <br>
-                    <h3>Vegetariánské lasagne</h3>
-                    <br>
-                </div>
-                <h2 class="nadpisy" onclick="toggleContent('rozbalitdezerty')">DEZERTY</h2>
-                <div id="rozbalitdezerty" class="beverages">
-                    <h3>Čokoládový fondant</h3>
-                    <br>
-                    <h3>Tiramisu</h3>
-                    <br>
-                    <h3>Citronový cheesecake</h3>
-                    <br>
-                </div>
-            </div>
-    </section>
-    <br>
-    <section id="drinks">
-            <h1 class="nadpisy" onclick="toggleContent('rozbalitpiti')">NÁPOJE ↓</h1>
-                <div id="rozbalitpiti" class="beverages">
-                    <h3>Limonáda s mátou a citronem</h3>
-                    <br>
-                    <h3>Smoothie z lesního ovoce</h3>
-                    <br>
-                    <h3>Ledový zelený čaj s medem a citronem</h3>
-                </div>
-    </section>
+  <div id="Dezerty" class="tabcontent">
+    <hr class="podtrhavac">
+    <h3>ČOKOLÁDOVÝ FONDÁN</h3>
+    <center><p>349 Kč</p></center>
+    <hr class="podtrhavac">
+    <h3>TIRAMISU</h3>
+    <center><p>349 Kč</p></center>
+    <hr class="podtrhavac">
+    <h3>PANNA COTTA S LESNÍM OVOCEM</h3>
+    <center><p>349 Kč</p></center>
+    <hr class="podtrhavac">
+  </div>
+  
+  <div id="Napoje" class="tabcontent">
+    <hr class="podtrhavac">
+    <h3>LIMONÁDA S MÁTOU A CITRONEM</h3>
+    <center><p>199 Kč</p></center>
+    <hr class="podtrhavac">
+    <h3>SMOOTHIE Z LESNÍHO OVOCE</h3>
+    <center><p>199 Kč</p></center>
+    <hr class="podtrhavac">
+    <h3>LEDOVÝ ZELENÝ ČAJ S MEDEM A CITRONEM</h3>
+    <center><p>199 Kč</p></center>
+    <hr class="podtrhavac">
+  </div>
+</section>
 
     <hr>
 
     <section id="about">
         <div class="container">
-            <h2>O nás</h2>
+            <h2>O NÁS</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Restaurace UTOPIA</h3>
+                    <h3>RESTAURACE UTOPIA</h3>
                     <p>
                         Vítejte v restauraci UTOPIA, kde se gastronomické sny stávají skutečností a každý kousek naší kuchyně je malým kouskem ráje. Jsme vášniví kuchaři a hostitelé, kteří věří, že dobré jídlo může změnit svět kolem nás.<br>
                         
@@ -143,8 +175,8 @@
 
     <section id="reservation">
         <div class="container">
-            <h2>Rezervace</h2>
-            <form action="#" method="post">
+            <h2>REZERVACE</h2>
+            <form id="reservation-form" action="#" method="post">
                 <div class="form-group">
                     <label for="date">Datum:</label>
                     <input type="date" id="date" name="date" required>
@@ -185,7 +217,7 @@
                     <label for="note">Poznámka:</label>
                     <textarea id="note" name="note" rows="4"></textarea>
                 </div>
-                <button type="submit">Odeslat rezervaci</button>
+                <button type="submit">REZERVOVAT</button>
             </form>
         </div>
     </section>
@@ -194,18 +226,18 @@
 
     <section id="reviews">
         <div class="container">
-            <h2>Recenze</h2>
+            <h2>RECENZE</h2>
             <div class="review">
                 <div class="review-box">
-                    <h3>Jana Novotná</h3>
+                    <h3>JANA NOVOTNÁ</h3>
                     <p>"Návštěva Utopia Restaurace byla skvělým zážitkem! Jídlo bylo vynikající a obsluha velmi přátelská. Nejvíce mě nadchl jejich dezertní menu, které bylo opravdu bohaté a chutné. Určitě se sem vrátím!"</p>
                 </div>
                 <div class="review-box">
-                    <h3>Petr Horák</h3>
+                    <h3>PETR NOVÁK</h3>
                     <p>"Utopia Restaurace je opravdu oázou klidu a skvělého jídla. Prostředí je krásné a moderní, ideální pro romantickou večeři nebo oslavu s přáteli. Jídlo bylo dokonale připravené a chuťově vyvážené. Doporučuji!"</p>
                 </div>
                 <div class="review-box">
-                    <h3>Lucie Dvořáková</h3>
+                    <h3>LUCIE DVOŘÁKOVÁ</h3>
                     <p>"Byla jsem příjemně překvapena kvalitou jídla a služeb v Utopia Restauraci. Personál byl ochotný a profesionální. Nabídka jídel byla pestrá a vše, co jsme ochutnali, bylo naprosto skvělé. Tato restaurace se stala mou oblíbenou!"</p>
                 </div>
             </div>
@@ -215,24 +247,29 @@
  <hr>
 
  <section class="contact" id="contact">
-    <div class="middle-text">
-        <h2>Kontakt</h2>
+    <div class="middle-text" id="contactnadpis">
+        <h2>KONTAKT</h2>
     </div>
 
     <div class="container11">
     <div class="content11">
         <div class="left-side11">
             <div class="address details" id="address">
-                <p class="topic"><i class="fas fa-map-marker-alt" ></i>Adresa: Weilova 4, 102 00 Praha 15</p>
+                <h3>ADRESA:</h3>
+                <p class="topic">Weilova 4, 102 00 Praha 15</p>
             </div>
             <div class="phone details" id="phone">
-                <p class="topic"><i class="fas fa-phone-alt" ></i>Telefon: 123 456 789</p>
+                <h3>TELEFON:</h3>
+                <p class="topic">+1 (123) 456 7890</p>
             </div>
             <div class="email details" id="email">
-                <p class="topic"><i class="fas fa-envelope" ></i>Email: restaurace@skolahostivar.cz</p>
+                <h3>EMAIL:</h3>
+                <p class="topic">restaurace@skolahostivar.cz</p>
             </div>
             <div class="hours details" id="hours">
-                <p class="topic"><i class="fas fa-clock" ></i>Otevírací hodiny: 8:00 - 21:00</p>
+                <h3>OTEVÍRACÍ HODINY:</h3>
+                <p class="topic">Po-Pá: 18:00 - 22:00</p>
+                <p class="topic">So, Ne: 18:00 - 23:00</p>
             </div>
         </div>
         <div class="right-side11">
@@ -249,11 +286,13 @@
 
 <section class="faq" id="faq">
     <div class="container">
-        <h2>FAQ - často kladené otázky</h2>
+        <div class="accord1on" id="accord1on">
+        <h2>FAQ - ČASTO KLADENÉ OTÁZKY</h2>
+    </div>
         <div class="accordion">
             <div class="accordion-content">
                 <label>
-                    <span class="title">Nabízíte možnost donášky nebo jídla s sebou?</span>
+                    <span class="title">NABÍZÍTE MOŽNOST DONÁŠKY NEBO JÍDLA S SEBOU?</span>
                     <i class="fa-solid fa-plus"></i>
                 </label>
     
@@ -263,7 +302,7 @@
             </div>
             <div class="accordion-content">
                 <label>
-                    <span class="title">Je nutná rezervace stolu předem?</span>
+                    <span class="title">JE NUTNÁ REZERVACE STOLU PŘEDEM?</span>
                     <i class="fa-solid fa-plus"></i>
                 </label>
                 <p class="description">
@@ -272,7 +311,7 @@
             </div>
             <div class="accordion-content">
                 <label>
-                    <span class="title">Nabízíte možnosti pro vegetariány a vegany?</span>
+                    <span class="title">NABÍZÍTE MOŽNOSTI PRO VEGETARIÁNY A VEGANY?</span>
                     <i class="fa-solid fa-plus"></i>
                 </label>
                 <p class="description">
@@ -281,11 +320,11 @@
             </div>
             <div class="accordion-content">
                 <label>
-                    <span class="title">Jaké jsou vaše otevírací hodiny?</span>
+                    <span class="title">JAKÉ JSOU VAŠE OTEVÍRACÍ HODINY?</span>
                     <i class="fa-solid fa-plus"></i>
                 </label>
                 <p class="description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nobis ut perspiciatis minima quidem nisi, obcaecati, delectus consequatur fuga nostrum iusto ipsam ducimus quibusdam possimus. Maiores non enim numquam voluptatem?
+                    Naše otevírací hodiny naleznete zde na našich stránkách v sekci kontakt.
                 </p>
             </div>
         </div>
@@ -293,13 +332,27 @@
 </section>
 
 <footer>
-    <p>&copy; 2024 UTOPIA</p>
+    <p>&copy; 2024 UTOPIA RESTAURANTS</p>
 </footer>
 
 </body>
 </html>
 
 <script>
+
+    // Hamburger menu
+    document.addEventListener('DOMContentLoaded', function() {
+    const menuItems = document.querySelectorAll('.menu ul li a');
+    const sideMenuCheckbox = document.getElementById('side-menu');
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            sideMenuCheckbox.checked = false;
+        });
+    });
+});
+
+
 
     document.addEventListener('DOMContentLoaded', function () {
         const lunchSpecialDiv = document.getElementById('lunchSpecial');
@@ -409,7 +462,7 @@
 
 
 
-   //faq section
+//faq section
 const accordionContent = document.querySelectorAll(".accordion-content");
 
 accordionContent.forEach((item, index) => {
@@ -419,13 +472,13 @@ accordionContent.forEach((item, index) => {
 
         let description = item.querySelector(".description");
         if(item.classList.contains("open")){
-            description.style.height = `${description.scrollHeight}px`; //scrollHeight property returns the height of an element including padding , but excluding borders, scrollbar or margin
+            description.style.height = `${description.scrollHeight}px`; 
             item.querySelector("i").classList.replace("fa-plus", "fa-minus");
         }else{
             description.style.height = "0px";
             item.querySelector("i").classList.replace("fa-minus", "fa-plus");
         }
-        removeOpen(index); //calling the funtion and also passing the index number of the clicked header
+        removeOpen(index); 
     })
 })
 
@@ -441,6 +494,36 @@ function removeOpen(index1){
     })
 }
 
+//reservation form
+document.getElementById("reservation-form").addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Rezervace byla odeslána!');
+    this.reset();
+});
 
 
+
+
+
+
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
     </script>
