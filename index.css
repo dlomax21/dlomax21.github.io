@@ -523,6 +523,7 @@ hr {
 
 #reservation .form-group {
     margin-bottom: 20px;
+    font-size: 14px;
 }
 
 #reservation label {
@@ -671,7 +672,7 @@ hr {
     border: none;
     font-size: 2em;
     cursor: pointer;
-    color: #000000;
+    color: #333333;
 }
 
 .close-btn:hover {
@@ -699,6 +700,7 @@ hr {
 
 .container11 .content11 h3 {
     font-weight: 825;
+    color: #333333;
 }
 
 
@@ -738,8 +740,7 @@ hr {
 .content11 .left-side11 .details .topic {
     font-size: 18px;
     font-weight: 500;
-    font-weight: bold;
-    color: #886e42;
+    color: #333333;
 }
 
 .container11 .content11 .right-side11 {
@@ -891,7 +892,6 @@ footer {
 
     .content11 .left-side11 .details .topic {
         font-size: 20px;
-        font-weight: bold;
     }
 
 }
