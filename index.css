@@ -65,13 +65,14 @@ header {
     z-index: 1000;
     background-color: rgb(255, 255, 255);
     color: #000;
-    padding: 20px 0;
+    padding: 30px 0;
     text-align: center;
     box-shadow: 0 0px 10px #00000085;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 
 section {
     scroll-margin-top: 150px; /* Set this to the height of your header */
@@ -192,6 +193,11 @@ section {
 
 /* Responsiveness */
 @media (min-width: 1000px) {
+    header {
+        padding: 10px 0;
+    }
+
+
     .menu {
         display: flex;
         position: static;
@@ -435,10 +441,11 @@ hr {
     margin: 0 auto;
 }
 
-#about h2 {
+#about h1 {
     margin-bottom: 20px;
     color: #886e42;
     font-weight: 825;
+    font-size: 29px;
 }
 
 #about h3 {
@@ -511,10 +518,11 @@ hr {
     margin: 0 auto;
 }
 
-#reservation h2 {
+#reservation h1 {
     margin-bottom: 20px;
     color: #886e42;
     font-weight: 825;
+    font-size: 29px;
 }
 
 #reservation form {
@@ -590,10 +598,11 @@ hr {
     margin: 0 auto;
 }
 
-#reviews h2 {
-    margin-bottom: 20px;
+#reviews h1 {
+    margin-bottom: 40px;
     color: #886e42;
     font-weight: 825;
+    font-size: 29px;
 }
 
 .review {
@@ -679,10 +688,11 @@ hr {
     color: #886e42;
 }
 
-#contactnadpis h2 {
+#contactnadpis h1 {
     margin-bottom: 20px;
     color: #886e42;
     font-weight: 825;
+    font-size: 29px;
 }
 
 .container11 {
@@ -946,10 +956,11 @@ footer {
 
 
 /*faq section*/
-#accord1on h2 {
+#accord1on h1 {
     margin-bottom: 20px;
     color: #886e42;
     font-weight: 825;
+    font-size: 29px;
 }
 
 .accordion{
@@ -969,7 +980,7 @@ footer {
     padding: 15px;
 }
 .accordion-content.open{
-    padding-bottom: 15px;
+    padding: 15px;
 }
 .accordion-content label{
     display: flex;
@@ -995,8 +1006,9 @@ footer {
 }
 .accordion-content .description{
     height: 0;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
     padding: 0 15px;
     transition: all 0.5s linear;
+    overflow: hidden; /* Ensure hidden content is not visible */
 }

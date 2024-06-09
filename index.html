@@ -76,6 +76,7 @@
 
     <hr>
 <section id="menumenicko">
+    <h1>STÁLÉ MENU</h1>
     <!-- Tab links -->
 <div class="tab">
     <button class="tablinks" onclick="openCity(event, 'Polevky')">POLÉVKY</button>
@@ -143,7 +144,7 @@
 
     <section id="about">
         <div class="container">
-            <h2>O NÁS</h2>
+            <h1>O NÁS</h1>
             <div class="about-content">
                 <div class="about-text">
                     <h3>RESTAURACE UTOPIA</h3>
@@ -175,7 +176,7 @@
 
     <section id="reservation">
         <div class="container">
-            <h2>REZERVACE</h2>
+            <h1>REZERVACE</h1>
             <form id="reservation-form" action="#" method="post">
                 <div class="form-group">
                     <label for="date">DATUM:</label>
@@ -187,7 +188,7 @@
                 </div>
                 <div class="form-group">
                     <label for="guests">POČET HOSTŮ:</label>
-                    <input type="number" id="guests" name="guests" min="1" max="8" required>
+                    <input type="number" id="guests" name="guests" min="1" max="20" required>
                 </div>
                 <div class="form-group">
                     <label for="duration">DÉLKA NÁVŠTĚVY:</label>
@@ -226,7 +227,7 @@
 
     <section id="reviews">
         <div class="container">
-            <h2>RECENZE</h2>
+            <h1>RECENZE</h1>
             <div class="review">
                 <div class="review-box">
                     <h3>JANA NOVOTNÁ</h3>
@@ -248,7 +249,7 @@
 
  <section class="contact" id="contact">
     <div class="middle-text" id="contactnadpis">
-        <h2>KONTAKT</h2>
+        <h1>KONTAKT</h1>
     </div>
 
     <div class="container11">
@@ -287,7 +288,7 @@
 <section class="faq" id="faq">
     <div class="container">
         <div class="accord1on" id="accord1on">
-        <h2>FAQ - ČASTO KLADENÉ OTÁZKY</h2>
+        <h1>FAQ - ČASTO KLADENÉ OTÁZKY</h1>
     </div>
         <div class="accordion">
             <div class="accordion-content">
@@ -297,7 +298,7 @@
                 </label>
     
                 <p class="description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nobis ut perspiciatis minima quidem nisi, obcaecati, delectus consequatur fuga nostrum iusto ipsam ducimus quibusdam possimus. Maiores non enim numquam voluptatem?
+                    Donášky jídel bohužel v nabídce nemáme ale v případě zájmu jídla sebou můžete využít našeho formuláře na rezervace zde na našem webu. Stačí pouze zadat do poznámky že máte zájem o jídlo sebou.
                 </p>
             </div>
             <div class="accordion-content">
@@ -306,7 +307,7 @@
                     <i class="fa-solid fa-plus"></i>
                 </label>
                 <p class="description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nobis ut perspiciatis minima quidem nisi, obcaecati, delectus consequatur fuga nostrum iusto ipsam ducimus quibusdam possimus. Maiores non enim numquam voluptatem?
+                    Ano. Na rezervaci je běžně stanovena čekací doba proto doporučujeme si udělat rezervaci předem zde na naší webové stránce v sekci REZERVACE.
                 </p>
             </div>
             <div class="accordion-content">
@@ -315,7 +316,7 @@
                     <i class="fa-solid fa-plus"></i>
                 </label>
                 <p class="description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nobis ut perspiciatis minima quidem nisi, obcaecati, delectus consequatur fuga nostrum iusto ipsam ducimus quibusdam possimus. Maiores non enim numquam voluptatem?
+                    Ano! V naší nabídce si najdou svoje i ti co mají omezený jídelníček.
                 </p>
             </div>
             <div class="accordion-content">
@@ -324,7 +325,7 @@
                     <i class="fa-solid fa-plus"></i>
                 </label>
                 <p class="description">
-                    Naše otevírací hodiny naleznete zde na našich stránkách v sekci kontakt.
+                    Naše otevírací hodiny naleznete zde na našich stránkách v sekci KONTAKT.
                 </p>
             </div>
         </div>
@@ -339,6 +340,7 @@
 </html>
 
 <script>
+
 
     // Hamburger menu
     document.addEventListener('DOMContentLoaded', function() {
@@ -462,37 +464,35 @@
 
 
 
-//faq section
+// FAQ section
 const accordionContent = document.querySelectorAll(".accordion-content");
 
 accordionContent.forEach((item, index) => {
     let header = item.querySelector("label");
-    header.addEventListener("click", () =>{
+    header.addEventListener("click", () => {
         item.classList.toggle("open");
 
         let description = item.querySelector(".description");
-        if(item.classList.contains("open")){
+        if (item.classList.contains("open")) {
             description.style.height = `${description.scrollHeight}px`; 
-            item.querySelector("i").classList.replace("fa-plus", "fa-minus");
-        }else{
+        } else {
             description.style.height = "0px";
-            item.querySelector("i").classList.replace("fa-minus", "fa-plus");
         }
         removeOpen(index); 
-    })
-})
+    });
+});
 
-function removeOpen(index1){
+function removeOpen(index1) {
     accordionContent.forEach((item2, index2) => {
-        if(index1 != index2){
+        if (index1 !== index2) {
             item2.classList.remove("open");
 
             let des = item2.querySelector(".description");
             des.style.height = "0px";
-            item2.querySelector("i").classList.replace("fa-minus", "fa-plus");
         }
-    })
+    });
 }
+
 
 //reservation form
 document.getElementById("reservation-form").addEventListener('submit', function(event) {
